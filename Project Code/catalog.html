@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---custom css-->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!---bootsrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>Thrift It</title>
+</head>
+<body>
+    <!-- Header -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+         <a class="navbar-brand" href="#">
+           <img src="icons/thrift-store-logo.png" alt="Thrift Store" width="auto" height="100" class="d-inline-block align-text-top">
+         
+         </a>
+         <!-- <img scr="icons/thrift-store-logo.png" alt="Thrift Store"> -->
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Home</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Men
+               </a>
+               <ul class="dropdown-menu">
+                 <li><a class="dropdown-item" href="#">Tops</a></li>
+                 <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                 <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Women
+               </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tops</a></li>
+                <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                <!-- <li><hr class="dropdown-divider"></li> -->
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+               </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tops
+             </a>
+               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tops</a></li>
+                <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                <!-- <li><hr class="dropdown-divider"></li> -->
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Bottoms
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tops</a></li>
+                <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                 <!-- <li><hr class="dropdown-divider"></li> -->
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Accessories</a>
+            </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                shoes
+              </a>
+               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tops</a></li>
+                <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                 <!-- <li><hr class="dropdown-divider"></li> -->
+                 <li><a class="dropdown-item" href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">All</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Help</a>
+             </li>
+          </ul>
+          <form class=" navform d-flex" role="search">
+           <img class="cart-icon" src="icons/cart-icon.png" alt="cart">
+           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success" type="submit">Search</button>
+           <button id="btn-logIn" class="btn btn-outline-success" >Log in</button>
+          </form>
+         </div>
+       </div>
+      </nav><!--------------end of navbar------------------>
+
+    
+      <div class="CatalogPage-div">
+         <div class="section-divider"><h4 class="section-divider-text">Find your next outfit<span class="col-green">.</span></h4></div>
+      </div>
+
+      <!---The catalog makes use of the Boostrap Grid systems to make it responsive on all device sizes.
+        -We have a div with a class=row and inside that row we can have any amount of colums.
+        -The columns are div elemens with the class="col-lg-3 col-md-4 col-sm-6".
+        -Each column represents a product in the catalog.
+        -Inside the column tag we get the anchor tag which sends you to the product page which should fetch 
+         and display all the information on the product you just clicked on.
+        -Inbetween the anchor tag , we have a div with the class="card". 
+        -This "card" div holds the information of the product displayed in the catalog  --->
+      <!-- Product Catalog-->
+      <div>
+        <div class="container-fluid">
+          <!-- row start -->
+          <div class="row">
+            
+            <div id="col-1" class="col-lg-3 col-md-4 col-sm-6"> <!-- column 1, can access this column with its id="col-1" -->
+              <a id="col-1-anchor" class="product-anchor" href="product.html" >
+                <div class="card"><!---This "card" div holds the information of the product displayed in the catalog--->
+                  <span id="col1-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col1-->
+                  <div class="card-img-size"> <!--This div is used to restrict the size of the images in the catalog card-->
+                    <img id="col-1-img" class="card-img-top" src="images/metallica-flanel-on-hanger.png"  alt="clothing-item-Metallica">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-1-price"> <!---Displays the price of the product in col 1--->
+                       R700
+                      <button class="btn btn-outline-success">Add to cart</button> 
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-1-name" class="card-title">Metallica shirt</h5> <!---Displays the name of the product in col 1--->
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-1-condition" class="progress-bar progress-bar-striped bg-success" style="width: 70%">Condition</div>
+                    </div>
+                  </div>
+                </div>
+              </a> 
+            </div>  <!---End of col 1, end of a product in catalog. All product in catalog follow this form.-->
+            <!---To change the content of an element, you can use it's id to access it then access its attributes such as src for an img etc.-->
+
+
+            <div  id="col-2" class="col-lg-3 col-md-4 col-sm-6">  <!---start col 2-->
+              <a id="col-2-anchor" class="product-anchor" href="product.html">
+                <span id="col2-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+                <div class="card">
+                  <div class="card-img-size">
+                    <img id="col-2-id" class="card-img-top" src="images/clothing-item3.png" alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-2-price" >R200
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-2-name" class="card-title">red shirt</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-2-condition" class="progress-bar progress-bar-striped bg-warning" style="width: 37%">Condition</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>  <!---end of col 2-->
+
+            <div id="col-3" class="col-lg-3 col-md-4 col-sm-6">  <!---start of col 3-->
+              <a id="col-3-anchor" class="product-anchor" href="product.html" >
+                <span id="col3-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+                <div class="card">
+                  <div class="card-img-size">
+                    <img img="col-3-img" class="card-img-top" src="images/t-shirt.png"  alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-3-price" >R300
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-3-name" class="card-title">Grey table mountain shirt</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-3-condition" class="progress-bar progress-bar-striped bg-success" style="width: 89%">Condition</div>
+  
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>  <!---end of col 3-->
+            
+            <div id="col-4" class="col-lg-3 col-md-4 col-sm-6">  <!---start col 4-->
+              <a id="col-4-anchor" href="product.html" class="product-anchor">
+                <span id="col4-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+                <div class="card" >
+                  <div class="card-img-size">
+                    <img id="col-4-img" class="card-img-top" src="images/thrift-clothing-for-online-store-demo-website.png"  alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-4-price" >R1200
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-4-name" class="card-title">Brow suit jacket</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-4-progress" class="progress-bar progress-bar-striped bg-success" style="width: 100%">Condition</div>
+    
+                    </div>
+                  </div>
+                </div>
+              </a>
+          </div>  <!---end of col 4-->
+
+          <div id="col-5" class="col-lg-3 col-md-4 col-sm-6"> <!-- start col 5 -->
+            <a id="col-5-anchor" class="product-anchor" href="product.html" >
+              <span id="col5-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+              <div class="card">
+                <div class="card-img-size">
+                  <img id="col-5-img" class="card-img-top" src="images/metallica-flanel-on-hanger-2.png" alt="clothing-item-Metallica">
+                </div>
+                <div class="card-header">
+                  <h3 id="col-5-price" >R700
+                    <button class="btn btn-outline-success">Add to cart</button>
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <h5 id="col-5-name" class="card-title">Metallica shirt</h5>
+                  <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                    <div id="col-5-condition" class="progress-bar progress-bar-striped bg-success" style="width: 100%">Condition</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>  <!---end of col 5-->
+          
+          <div id="col-6" class="col-lg-3 col-md-4 col-sm-6">  <!---start col 6-->
+            <a id="col-6-anchor" href="product.html" class="product-anchor">
+              <span id="col6-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+              <div class="card">
+                <div class="card-img">
+                  <img id="col-6-img" src="images/baggy-sweat-pants.png" class="card-img-top" alt="...">
+                </div>
+                <div class="card-header">
+                  <h3 id="col-6-price" >R200
+                    <button class="btn btn-outline-success">Add to cart</button>
+                  </h3>
+                  
+                </div>
+                <div class="card-body">
+                  <h5 id="col-6-price" class="card-title">red shirt</h5>
+                  <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                    <div id="col-6-condition" class="progress-bar progress-bar-striped bg-warning" style="width: 37%">Condition</div>
+  
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>  <!-- end of col 6 -->
+          
+          <div id="col-7" class="col-lg-3 col-md-4 col-sm-6"> <!-- start of col 7 -->
+            <a id="col-7-anchor" class="product-anchor" href="product.html" >
+              <span id="col7-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+              <div class="card">
+                <div class="card-img-size">
+                  <img id="col-7-img" class="card-img-top" src="images/black-cargo-pants-thrift.png"  alt="...">
+                </div>
+                <div class="card-header">
+                  <h3 id="col-7-price" >R300
+                    <button class="btn btn-outline-success">Add to cart</button>
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <h5 id="col-7-name" class="card-title">Grey table mountain shirt</h5>
+                  <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                    <div id="col-7-condition" class="progress-bar progress-bar-striped bg-success" style="width: 89%">Condition</div>
+  
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- end of col 7 -->
+          
+          <div id="col-8" class="col-lg-3 col-md-4 col-sm-6"> <!---start of col 8-->
+            <a id="col-8-anchor" href="product.html" class="product-anchor">
+              <span id="col8-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+              <div class="card">
+                <div class="card-img-size">
+                  <img id="col-8-img" src="images/cargo-pants-thrift.png" class="card-img-top" alt="...">
+                </div>
+              
+              <div class="card-header">
+                <h3 id="col-8-price">R1200
+                  <button class="btn btn-outline-success">Add to cart</button>
+                </h3>
+              </div>
+              <div class="card-body">
+                <h5 id="col-8-name" class="card-title">Brow suit jacket</h5>
+                <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                  <div id="col-8-condition" class="progress-bar progress-bar-striped bg-success" style="width: 100%">Condition</div>
+  
+                </div>
+              </div>
+            </div>
+            </a>
+        </div> <!---end of col 8-->
+
+        <div id="col-9" class="col-lg-3 col-md-4 col-sm-6"> <!-- start col 9 -->
+              <a id="col-9-anchor" href="product.html" class="product-anchor">
+                <span id="col9-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+                <div class="card">
+                  <div class="card-img-size">
+                    <img id="col-9-img" class="card-img-top" src="images/lv-loafers.png"  alt="clothing-item-Metallica">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-9-price" >R1800
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-9-name" class="card-title">Black dress shoes</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-9-condition" class="progress-bar progress-bar-striped bg-success" style="width: 100%">Condition</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>  <!----end of col 9-->
+            
+            <div id="col-10" class="col-lg-3 col-md-4 col-sm-6"> <!----start col 10-->
+              <a id="col-10-anchor" href="product.html" class="product-anchor">
+                <span id="col10-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+                <div class="card">
+                  <div class="card-img-size">
+                    <img id="col-10-img" class="card-img-top" src="images/belt-upscaled.png"  alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-10-price">R110
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                    
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-10-name" class="card-title">Black belt</h5>
+                    <div  class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-10-condition" class="progress-bar progress-bar-striped bg-warning" style="width: 37%">Condition</div>
+  
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div> <!---end of col 10-->
+
+          
+            <div id="col-11" class="col-lg-3 col-md-4 col-sm-6"> <!---start of col 11-->
+              <a id="col-11-anchor" href="product.html" class="product-anchor">
+                <span id="col1-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+
+                <div class="card">
+                  <div class="card-img-size">
+                    <img id="col1-11-img" class="card-img-top" src="images/AI_Generated_Image.jpg"  alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-11-price" >R2300
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-11-name" class="card-title">Black shiny dress Shoes</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-11-condition" class="progress-bar progress-bar-striped bg-success" style="width: 89%">Condition</div>
+  
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>  <!--end of col 11 -->
+            
+            <div id="col-12" class="col-lg-3 col-md-4 col-sm-6">  <!---start of col 12-->
+              <a id="col-12-anchor" href="product.html" class="product-anchor">
+                <span id="col12-product-id" class="product-id" > 7767</span> <!---holds the unique id of the product being displayed in col-->
+                <div class="card">
+                  <div class="card-img-size">
+                    <img id="col-12-img" class="card-img-top" src="images/a-stack-of-perfectly-folded-shirts.jpeg"  alt="...">
+                  </div>
+                  <div class="card-header">
+                    <h3 id="col-12-price" >R300
+                      <button class="btn btn-outline-success">Add to cart</button>
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <h5 id="col-12-name" class="card-title">Dress shirt</h5>
+                    <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                      <div id="col-12-condition" class="progress-bar progress-bar-striped bg-success" style="width: 100%">Condition</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+          </div> <!---end of col 12-->
+
+
+       </div> <!-- End of row 1 -->
+        
+      </div> <!--end of row container-->
+
+    </div> <!--end of catalog section-->
+
+  <!---Boostrap JavaScript link for basic functionalities -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
+</body>
+</html>

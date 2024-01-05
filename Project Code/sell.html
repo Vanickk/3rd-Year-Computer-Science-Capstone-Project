@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---custom css-->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!---bootsrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>Sell</title>
+</head>
+<body>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+           <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+           <a class="navbar-brand" href="#">
+             <img src="icons/thrift-store-logo.png" alt="Thrift Store" width="auto" height="100" class="d-inline-block align-text-top">
+           
+           </a>
+           <!-- <img scr="icons/thrift-store-logo.png" alt="Thrift Store"> -->
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="#">Home</a>
+               </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Men
+                 </a>
+                 <ul class="dropdown-menu">
+                   <li><a class="dropdown-item" href="#">Tops</a></li>
+                   <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                   <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Women
+                 </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                 </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tops
+               </a>
+                 <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Bottoms
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                   <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Accessories</a>
+              </li>
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  shoes
+                </a>
+                 <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">Bottoms</a></li>
+                   <!-- <li><hr class="dropdown-divider"></li> -->
+                   <li><a class="dropdown-item" href="#">Shoes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">All</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">Help</a>
+               </li>
+            </ul>
+            <form class=" navform d-flex" role="search">
+             <img class="cart-icon" src="icons/cart-icon.png" alt="cart">
+             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+             <button class="btn btn-outline-success" type="submit">Search</button>
+             <button id="btn-logIn" class="btn btn-outline-success" >Log in</button>
+            </form>
+           </div>
+         </div>
+     </nav><!---end of navbar-->
+
+     <div>
+        <div class="section-divider"><h4 class="section-divider-text">Sell your clothes with us<span class="col-green">!</span></h4></div>
+     </div>
+
+     <!---input form--->
+     <div class="container">
+        <form class="row needs-validation" novalidate>
+            <div class="col-lg-6 col-md-12"> <!---first column asks users to upload images-->
+                <!-- <div class="mb-3">
+                    <label for="itemImages" class="form-label">Upload your images</label>
+                    <input type="file" name="itemImages" id="itemImages" accept="image/*" multiple>
+                </div>    -->
+                <div class="mb-3">
+                    <label for="imgInput" class="form-label">Upload your images</label>
+                    <input class="form-control" type="file" id="imgInput" accept="images/*" >
+                  </div>  
+                <div id="displayImg-for-sale">
+                  <img id="imgDisplay" width="250" alt="">
+                </div> 
+                <div>
+                  <ol id="prediction-list"></ol>
+                </div>          
+            <div class="col-lg-6 col-md-12"> <!---2nd column gets the info of the sell and the item for sale-->
+                <div class="mb-3">
+                    <label for="sellerName" class="form-label">Name</label>
+                    <input name="brand" type="text" class="form-control" id="sellName" placeholder="Enter your name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="sellerSurname" class="form-label">Surname</label>
+                    <input name='condition' type="text" class="form-control" id="sellSurname" placeholder="Enter your surname">
+                </div>
+                <div class="mb-3">
+                    <label for="sellEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="sellerEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">please enter a valid email address for us to contact you.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="itemName" class="form-label">Item name</label>
+                    <input type="text" class="form-control" id="itemName" placeholder="Enter the name of the item">
+                </div>
+                <div class="mb-3">
+                    <label for="itemDescription" class="form-label">Item description</label>
+                    <textarea class="form-control" id="itemDescription" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="itemType" class="form-label">Item type</label>
+                    <select name='itemType' class="form-select form-select-sm" aria-label="Small select example">
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option value="1">top</option>
+                        <option value="2">pants</option>
+                        <option value="3">shoe</option>
+                    </select>
+
+                    <label for="itemSize" class="form-label">Item size</label>
+                    <select name='size' class="form-select form-select-sm" aria-label="Small select example">
+                        <!-- <option selected>Open this select menu</option> -->
+                        <option value="1">XXS</option>
+                        <option value="2">XS</option>
+                        <option value="3">S</option>
+                        <option value="1">M</option>
+                        <option value="2">L</option>
+                        <option value="3">XL</option>
+                        <option value="3">XXL</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <button id="btn-sell-submit" type="submit" class="btn btn-outline-success b-3">Submit</button>
+                </div>
+                <div>
+                  
+                  <h1 id="prediction-results"></h1>
+                </div>
+
+                
+
+            </div>
+        </form>
+     </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+  <!-- <script src="./script/main.js"></script> -->
+  <sript src="./dist/bundle.js"></script>
+  <script src="target_classes.js"></script>
+  <script type="module" src="predict.js"></script>
+</body>
+</html>
